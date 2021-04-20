@@ -39,6 +39,7 @@ async fn main() -> Result<()> {
     document.publish(&client).await?;
 
     chain = DocumentChain::new(AuthChain::new(document)?);
+
     // FIXME  
     chain = DocumentChain::from_json(&chain.to_json().unwrap()).unwrap();
 
@@ -79,11 +80,13 @@ async fn main() -> Result<()> {
 
     keys.push(keypair);
     chain.try_push_auth(new)?;
-
     println!("Chain (2) > {:#}", chain);
     println!();
   }
-
+  
+  
+  // FIXME  
+  chain = DocumentChain::from_json(&chain.to_json().unwrap()).unwrap();
   // =========================================================================
   // Publish Diff Chain Update
   // =========================================================================
