@@ -7,6 +7,8 @@
 //! cargo run --example diff_chain
 
 use identity::core::Timestamp;
+use identity::core::ToJson;
+use identity::core::FromJson;
 use identity::did::MethodBuilder;
 use identity::did::MethodData;
 use identity::did::MethodRef;
@@ -37,6 +39,9 @@ async fn main() -> Result<()> {
     document.publish(&client).await?;
 
     chain = DocumentChain::new(AuthChain::new(document)?);
+    // FIXME  
+    chain = DocumentChain::from_json(&chain.to_json().unwrap()).unwrap();
+
     keys.push(keypair);
 
     println!("Chain (1) > {:#}", chain);
