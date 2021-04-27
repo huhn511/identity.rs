@@ -49,13 +49,4 @@ async fn main() -> Result<()> {
 - [More Examples](https://github.com/iotaledger/identity.rs/tree/dev/examples): Practical examples to get started with the library.
 - [IOTA Identity Experience Team Website](https://iota-community.github.io/X-Team_IOTA_Identity/): Website of aforementioned team.
 
-## Structure (Temporary)
-
-- Resources
-  - Docs Link (Website & User Guide)
-  - X-Team
-- Simple Example
-- Architecture/Overview
-- Get
-
 License: Apache-2.0
